@@ -15,15 +15,16 @@ export default function Home() {
   const [updateUser, setUpdateUser] = useState<User>({ name: "", email: "", id: 0 });
 
   // Fetch Users
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(`${apiURL}/users`);
+      setUsers(response.data.reverse());
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(`${apiURL}/users`);
-        setUsers(response.data.reverse());
-      } catch (error) {
-        console.log(error);
-      }
-    };
     fetchData();
   }, []); // Empty dependency array to fetch only once
 
@@ -34,6 +35,7 @@ export default function Home() {
       await axios.post(`${apiURL}/users`, newUser);
       setUsers([...users, newUser]);
       setNewUser({ name: "", email: "", id: 0 });
+      fetchData();
     } catch (error) {
       console.log(error);
     }
