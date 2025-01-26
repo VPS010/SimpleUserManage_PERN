@@ -21,7 +21,7 @@ docker-compose down
 
 ## Tech Stack
 
-- **Frontend**: React
+- **Frontend**: Nextjs
 - **Backend**: Node.js with Express
 - **Database**: PostgreSQL
 - **ORM**: Prisma
