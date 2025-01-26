@@ -6,7 +6,7 @@ This is a simple User Management Web Application built using the PERN stack (Pos
 
 To run this app locally, you will need Docker and Docker Compose installed.
 
-### 1. Clone the repository:
+### Clone the repository:
 
 ```bash
 git clone https://github.com/VPS010/SimpleUserManage_PERN.git
@@ -14,7 +14,7 @@ cd userManagement
 docker-compose up -d
 docker exec -it backend npx prisma migrate dev --name init
 ```
-### 1. To stop the application:
+### To stop the application:
 ```bash
 docker-compose down
 ```
